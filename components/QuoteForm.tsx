@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Loader2,
   ShieldCheck,
+  ChevronDown,
 } from "lucide-react";
 import { siteConfig } from "@/config/site.config";
 import { Reveal } from "./Reveal";
@@ -260,24 +261,32 @@ export function QuoteForm() {
                     >
                       Service needed <span className="text-red-600">*</span>
                     </label>
-                    <select
-                      id="service"
-                      name="service"
-                      defaultValue=""
-                      className={`${inputBase} ${
-                        errors.service ? "border-red-500" : "border-line"
-                      }`}
-                    >
-                      <option value="" disabled>
-                        Select a service…
-                      </option>
-                      {siteConfig.services.map((s) => (
-                        <option key={s.title} value={s.title}>
-                          {s.title}
+                    <div className="relative">
+                      <select
+                        id="service"
+                        name="service"
+                        defaultValue=""
+                        className={`${inputBase} cursor-pointer appearance-none pr-11 ${
+                          errors.service ? "border-red-500" : "border-line"
+                        }`}
+                      >
+                        <option value="" disabled>
+                          Select a service…
                         </option>
-                      ))}
-                      <option value="Other / Not sure">Other / Not sure</option>
-                    </select>
+                        {siteConfig.services.map((s) => (
+                          <option key={s.title} value={s.title}>
+                            {s.title}
+                          </option>
+                        ))}
+                        <option value="Other / Not sure">
+                          Other / Not sure
+                        </option>
+                      </select>
+                      <ChevronDown
+                        className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink-muted"
+                        aria-hidden="true"
+                      />
+                    </div>
                     {errors.service && (
                       <p className="mt-1.5 text-sm text-red-600" role="alert">
                         {errors.service}
