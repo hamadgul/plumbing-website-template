@@ -64,8 +64,13 @@ export function QuoteForm() {
     "w-full rounded-xl border bg-surface px-4 py-3.5 text-ink placeholder:text-ink-muted/60 outline-none transition-colors focus:border-secondary focus:ring-4 focus:ring-secondary/15";
 
   return (
-    <section id="quote" className="bg-primary py-24 sm:py-32">
-      <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
+    <section
+      id="quote"
+      className="relative overflow-hidden bg-primary py-24 sm:py-32"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-blueprint" />
+      <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
+      <div className="container-x relative grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
         {/* Left: pitch + contact details */}
         <div className="text-white">
           <Reveal>
@@ -186,7 +191,7 @@ export function QuoteForm() {
                       htmlFor="name"
                       className="mb-1.5 block text-sm font-semibold text-ink"
                     >
-                      Full name <span className="text-accent">*</span>
+                      Full name <span className="text-red-600">*</span>
                     </label>
                     <input
                       id="name"
@@ -195,11 +200,11 @@ export function QuoteForm() {
                       autoComplete="name"
                       placeholder="Jane Doe"
                       className={`${inputBase} ${
-                        errors.name ? "border-accent" : "border-line"
+                        errors.name ? "border-red-500" : "border-line"
                       }`}
                     />
                     {errors.name && (
-                      <p className="mt-1.5 text-sm text-accent" role="alert">
+                      <p className="mt-1.5 text-sm text-red-600" role="alert">
                         {errors.name}
                       </p>
                     )}
@@ -210,7 +215,7 @@ export function QuoteForm() {
                       htmlFor="phone"
                       className="mb-1.5 block text-sm font-semibold text-ink"
                     >
-                      Phone <span className="text-accent">*</span>
+                      Phone <span className="text-red-600">*</span>
                     </label>
                     <input
                       id="phone"
@@ -219,11 +224,11 @@ export function QuoteForm() {
                       autoComplete="tel"
                       placeholder="(555) 000-0000"
                       className={`${inputBase} ${
-                        errors.phone ? "border-accent" : "border-line"
+                        errors.phone ? "border-red-500" : "border-line"
                       }`}
                     />
                     {errors.phone && (
-                      <p className="mt-1.5 text-sm text-accent" role="alert">
+                      <p className="mt-1.5 text-sm text-red-600" role="alert">
                         {errors.phone}
                       </p>
                     )}
@@ -253,14 +258,14 @@ export function QuoteForm() {
                       htmlFor="service"
                       className="mb-1.5 block text-sm font-semibold text-ink"
                     >
-                      Service needed <span className="text-accent">*</span>
+                      Service needed <span className="text-red-600">*</span>
                     </label>
                     <select
                       id="service"
                       name="service"
                       defaultValue=""
                       className={`${inputBase} ${
-                        errors.service ? "border-accent" : "border-line"
+                        errors.service ? "border-red-500" : "border-line"
                       }`}
                     >
                       <option value="" disabled>
@@ -274,7 +279,7 @@ export function QuoteForm() {
                       <option value="Other / Not sure">Other / Not sure</option>
                     </select>
                     {errors.service && (
-                      <p className="mt-1.5 text-sm text-accent" role="alert">
+                      <p className="mt-1.5 text-sm text-red-600" role="alert">
                         {errors.service}
                       </p>
                     )}
@@ -330,7 +335,7 @@ export function QuoteForm() {
                 </button>
 
                 {status === "error" && (
-                  <p className="text-center text-sm text-accent" role="alert">
+                  <p className="text-center text-sm text-red-600" role="alert">
                     Something went wrong. Please call us at {siteConfig.phone}.
                   </p>
                 )}

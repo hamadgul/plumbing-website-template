@@ -47,20 +47,10 @@ export function Header() {
           className="flex items-center gap-2.5"
           aria-label={`${siteConfig.businessName} home`}
         >
-          <span
-            className={`grid h-11 w-11 place-items-center rounded-2xl shadow-lg transition-colors ${
-              scrolled
-                ? "bg-primary text-white shadow-primary/20"
-                : "bg-white text-primary shadow-black/10"
-            }`}
-          >
+          <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
             <Icon name={siteConfig.brand.icon} className="h-6 w-6" />
           </span>
-          <span
-            className={`text-lg font-display font-bold leading-none transition-colors ${
-              scrolled ? "text-ink" : "text-white"
-            }`}
-          >
+          <span className="text-lg font-display font-bold leading-none text-ink">
             {siteConfig.businessName}
           </span>
         </a>
@@ -71,9 +61,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className={`text-sm font-semibold transition-colors hover:text-secondary ${
-                scrolled ? "text-ink-muted" : "text-white/85"
-              }`}
+              className="text-sm font-semibold text-ink-muted transition-colors hover:text-secondary"
             >
               {item.label}
             </a>
@@ -97,9 +85,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className={`grid h-11 w-11 place-items-center rounded-xl lg:hidden ${
-            scrolled || open ? "text-ink" : "text-white"
-          }`}
+          className="grid h-11 w-11 place-items-center rounded-xl text-ink lg:hidden"
         >
           {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
         </button>

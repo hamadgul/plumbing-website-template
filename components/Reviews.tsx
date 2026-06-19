@@ -35,7 +35,7 @@ export function Reviews() {
             <div className="mt-5 flex items-center justify-center gap-2">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="h-6 w-6 fill-star text-star" />
                 ))}
               </div>
               <span className="text-lg font-semibold text-ink">
@@ -65,7 +65,7 @@ export function Reviews() {
                       {Array.from({ length: active.rating }).map((_, i) => (
                         <Star
                           key={i}
-                          className="h-5 w-5 fill-amber-400 text-amber-400"
+                          className="h-5 w-5 fill-star text-star"
                         />
                       ))}
                     </div>

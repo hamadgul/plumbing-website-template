@@ -26,7 +26,7 @@ export function StickyCallBar() {
       <div className="flex items-stretch gap-px bg-line shadow-[0_-8px_24px_rgba(0,0,0,0.12)]">
         <a
           href={`tel:${siteConfig.phoneHref}`}
-          className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 font-bold text-white"
+          className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 font-bold text-primary-dark"
         >
           <Phone className="h-5 w-5" />
           Call Now

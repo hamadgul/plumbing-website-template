@@ -110,9 +110,10 @@ export function WhyChooseUs() {
       id="why-us"
       className="relative overflow-hidden bg-primary py-24 sm:py-32"
     >
-      {/* Decorative glow */}
-      <div className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-secondary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+      {/* Blueprint texture + brass glow */}
+      <div className="pointer-events-none absolute inset-0 bg-blueprint" />
+      <div className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-secondary/15 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
 
       <div className="container-x relative grid gap-16 lg:grid-cols-2 lg:items-center">
         {/* Left: copy + benefits */}
@@ -167,15 +168,15 @@ export function WhyChooseUs() {
 
             {/* Rating highlight card spanning full width */}
             <div className="col-span-2 flex items-center gap-4 rounded-3xl bg-white p-6 shadow-2xl shadow-black/20">
-              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-amber-400/15">
-                <Star className="h-7 w-7 fill-amber-400 text-amber-400" />
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-star/15">
+                <Star className="h-7 w-7 fill-star text-star" />
               </div>
               <div>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-amber-400 text-amber-400"
+                      className="h-4 w-4 fill-star text-star"
                     />
                   ))}
                 </div>

@@ -26,6 +26,7 @@ const config: Config = {
         ink: "rgb(var(--c-ink) / <alpha-value>)",
         "ink-muted": "rgb(var(--c-ink-muted) / <alpha-value>)",
         line: "rgb(var(--c-line) / <alpha-value>)",
+        star: "rgb(var(--c-star) / <alpha-value>)",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

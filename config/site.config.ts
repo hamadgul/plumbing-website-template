@@ -114,6 +114,7 @@ export interface SiteConfig {
     ink: string; // primary text
     inkMuted: string; // secondary text
     line: string; // borders
+    star: string; // rating / star color (kept on-brand instead of raw amber)
   };
 }
 
@@ -290,15 +291,18 @@ export const siteConfig: SiteConfig = {
   },
 
   theme: {
-    primary: "#0A3D62",
-    primaryDark: "#062742",
-    secondary: "#1CA7C4",
-    accent: "#F97316",
-    accentDark: "#EA580C",
-    surface: "#FFFFFF",
-    surfaceAlt: "#F1F7FB",
-    ink: "#0F2533",
-    inkMuted: "#566B7B",
-    line: "#DCE7F0",
+    // Deep petrol-teal + warm brass — water-associated and trustworthy, but
+    // off the overused navy-blue + bright-orange trades cliché.
+    primary: "#0C4A4E", // deep petrol teal
+    primaryDark: "#06302F", // near-black teal for footer / depth
+    secondary: "#2BA6A0", // bright "water" teal — links, icons, accents
+    accent: "#F2A413", // crisp marigold CTA / accent (uses dark text for AA)
+    accentDark: "#D98A0B",
+    surface: "#FBFAF7", // warm off-white, not sterile pure white
+    surfaceAlt: "#EEF3F1", // cool-neutral alternate band
+    ink: "#122F2D", // deep teal-tinted near-black text
+    inkMuted: "#546663", // muted body text
+    line: "#DBE5E2", // hairline borders
+    star: "#E0A12A", // brass-gold rating color
   },
 };

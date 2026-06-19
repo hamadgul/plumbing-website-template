@@ -33,6 +33,7 @@ export function buildThemeCss(theme: SiteConfig["theme"]): string {
     "--c-ink": hexToRgbChannels(theme.ink),
     "--c-ink-muted": hexToRgbChannels(theme.inkMuted),
     "--c-line": hexToRgbChannels(theme.line),
+    "--c-star": hexToRgbChannels(theme.star),
   };
   const body = Object.entries(vars)
     .map(([k, v]) => `${k}:${v};`)
